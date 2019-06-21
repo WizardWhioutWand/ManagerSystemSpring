@@ -1,3 +1,8 @@
+package com.ass.web;
+
+import com.ass.service.UserService;
+import com.ass.web.been.User;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -68,6 +73,7 @@ public class Servlet extends HttpServlet {
                 response.getWriter().append("<table>");
                 response.getWriter().append("<tr><td span='2'>姓名</td><td></td><td span='2'>密码</td><td></td></tr>");
                 try {
+
                     List<User> users = service.getUsers(currentPage, pageSize);
                     for (User user : users
                     ) {
